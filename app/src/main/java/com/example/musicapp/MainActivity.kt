@@ -2,36 +2,51 @@ package com.example.musicapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import com.example.musicapp.View.ClassicFragment
+import com.example.musicapp.View.PopFragment
+import com.example.musicapp.View.RockFragment
 import com.example.musicapp.databinding.ActivityMainBinding
+import com.example.musicapp.model.Classic
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {
-        ActivityMainBinding.inflate(this.layoutInflater)
+        ActivityMainBinding.inflate(layoutInflater)
     }
+
+
+    private val classicFragment = ClassicFragment()
+    private val popFragment = PopFragment()
+    private val rockFragment = RockFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.setContentView(this.binding.root)
+        setContentView(binding.root)
+
+
+
+        replaceFragment(classicFragment)
 
 
         Music.ClassicComponent.inject(this)
-        val bottomNavigationView = this.binding.navView
-
-        val navController =this.findNavController(R.id.nav_host_fragment_activity_main)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        this.setupActionBarWithNavController(navController,appBarConfiguration)
-        bottomNavigationView.setupWithNavController(navController)
+        val  BottomNavigationView = binding.bottomNavigation
 
 
 
-            }
+
+
+
+
         }
+
+    private fun replaceFragment(fragment: ClassicFragment) {
+
+    }
+
+
+}
 
 
 

@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".View.PopFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/landscape_pop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="pop_fragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
